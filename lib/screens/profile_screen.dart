@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                  color: Color(0xFF1E293B),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -79,13 +79,20 @@ class ProfileScreen extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+        style: const TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 14,
+          color: Color(0xFF1E293B),
+        ),
       ),
       subtitle: Text(
         subtitle,
-        style: TextStyle(color: Colors.grey[600], fontSize: 13),
+        style: const TextStyle(
+          color: Color(0xFF64748B),
+          fontSize: 13,
+        ),
       ),
-      trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+      trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14, color: Color(0xFF64748B)),
       onTap: () {},
     );
   }
@@ -94,12 +101,16 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: const Color(0xFFF6F8FB),
+      backgroundColor: const Color(0xFFF8FAFC),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
           'My Profile',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            color: Colors.white,
+            letterSpacing: -0.5,
+          ),
         ),
         centerTitle: true,
         elevation: 0,
@@ -113,7 +124,7 @@ class ProfileScreen extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Container(
-                  height: 180,
+                  height: 190,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -127,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 110,
+                  top: 120,
                   child: Container(
                     padding: const EdgeInsets.all(4.0),
                     decoration: const BoxDecoration(
@@ -136,8 +147,8 @@ class ProfileScreen extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black12,
-                          blurRadius: 10,
-                          offset: Offset(0, 5),
+                          blurRadius: 12,
+                          offset: Offset(0, 6),
                         ),
                       ],
                     ),
@@ -151,7 +162,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 60.0),
+            const SizedBox(height: 65.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -159,19 +170,20 @@ class ProfileScreen extends StatelessWidget {
                   const Text(
                     '3bdSa3ed',
                     style: TextStyle(
-                      fontSize: 26.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                      letterSpacing: -0.5,
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.w800,
+                      color: Color(0xFF1E293B),
+                      letterSpacing: -0.8,
                     ),
                   ),
-                  const SizedBox(height: 6.0),
+                  const SizedBox(height: 4.0),
                   Text(
                     'Mobile App Developer',
                     style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.w700,
                       color: theme.colorScheme.primary,
+                      letterSpacing: 0.2,
                     ),
                   ),
                   const SizedBox(height: 12.0),
@@ -181,21 +193,22 @@ class ProfileScreen extends StatelessWidget {
                       _buildHeaderBadge(
                         icon: Icons.location_on_outlined,
                         label: 'Gaza',
-                        color: Colors.grey[700]!,
+                        color: const Color(0xFF475569),
+                        bgColor: const Color(0xFFF1F5F9),
                       ),
                       const SizedBox(width: 8),
                       _buildHeaderBadge(
                         icon: Icons.work_outline_rounded,
                         label: 'Open to Work',
-                        color: Colors.green[700]!,
-                        bgColor: Colors.green[50],
+                        color: const Color(0xFF16A34A),
+                        bgColor: const Color(0xFFDCFCE7),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 24.0),
+            const SizedBox(height: 28.0),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -209,8 +222,9 @@ class ProfileScreen extends StatelessWidget {
                       'I am a mobile application developer interested in building simple and practical applications using Flutter. I enjoy learning new programming concepts, improving my development skills, and working on projects that help me gain real experience in software development.',
                       style: TextStyle(
                         fontSize: 14.0,
-                        color: Color(0xFF4A4A4A),
+                        color: Color(0xFF475569),
                         height: 1.6,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -237,7 +251,7 @@ class ProfileScreen extends StatelessWidget {
                           title: 'UCAS Portal Client',
                           description: 'A mobile portal app developed in Flutter allowing students to access class details, timetables, and academic grades offline.',
                         ),
-                        const Divider(height: 24, thickness: 0.5),
+                        const Divider(height: 24, thickness: 0.5, color: Color(0xFFE2E8F0)),
                         _buildProjectItem(
                           title: 'Local Delivery Tracker',
                           description: 'A practical, real-time map tracking delivery application utilizing Firebase Firestore and Map Integration APIs.',
@@ -295,6 +309,28 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  InfoCard(
+                    title: 'Contact Details',
+                    icon: Icons.contact_mail_outlined,
+                    iconColor: Colors.indigo,
+                    child: Column(
+                      children: [
+                        _buildContactRow(
+                          icon: Icons.email_outlined,
+                          label: 'Email Address',
+                          value: 'aelbayoumi1@smail.ucas.edu.ps',
+                          color: Colors.blue,
+                        ),
+                        const Divider(height: 24, thickness: 0.5, color: Color(0xFFE2E8F0)),
+                        _buildContactRow(
+                          icon: Icons.code_rounded,
+                          label: 'GitHub Profile',
+                          value: 'github.com/3bedSa',
+                          color: Colors.purple,
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 16.0),
                   ElevatedButton.icon(
                     onPressed: () => _showContactInfo(context),
@@ -313,7 +349,7 @@ class ProfileScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
-                  ),
+                      ),
                       elevation: 2,
                       shadowColor: theme.colorScheme.primary.withOpacity(0.3),
                     ),
@@ -337,7 +373,7 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       decoration: BoxDecoration(
-        color: bgColor ?? Colors.grey[200],
+        color: bgColor ?? const Color(0xFFF1F5F9),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Row(
@@ -349,7 +385,7 @@ class ProfileScreen extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 12.0,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
               color: color,
             ),
           ),
@@ -370,7 +406,7 @@ class ProfileScreen extends StatelessWidget {
               label,
               style: const TextStyle(
                 fontWeight: FontWeight.w600,
-                color: Colors.black54,
+                color: Color(0xFF64748B),
                 fontSize: 13.0,
               ),
             ),
@@ -380,7 +416,7 @@ class ProfileScreen extends StatelessWidget {
               value,
               style: const TextStyle(
                 fontWeight: FontWeight.w600,
-                color: Colors.black87,
+                color: Color(0xFF1E293B),
                 fontSize: 13.0,
               ),
             ),
@@ -402,16 +438,16 @@ class ProfileScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 15.0,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Color(0xFF1E293B),
           ),
         ),
         const SizedBox(height: 4.0),
         Text(
           description,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 13.0,
-            color: Colors.grey[600],
-            height: 1.4,
+            color: Color(0xFF475569),
+            height: 1.5,
           ),
         ),
       ],
@@ -426,7 +462,7 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: 18, color: Colors.grey[600]),
+        Icon(icon, size: 18, color: const Color(0xFF64748B)),
         const SizedBox(width: 8),
         Expanded(
           child: Column(
@@ -437,15 +473,15 @@ class ProfileScreen extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 14.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                  color: Color(0xFF1E293B),
                 ),
               ),
               const SizedBox(height: 2),
               Text(
                 subtitle,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12.0,
-                  color: Colors.grey[600],
+                  color: Color(0xFF64748B),
                 ),
               ),
             ],
@@ -463,16 +499,16 @@ class ProfileScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 14.0,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Color(0xFF1E293B),
           ),
         ),
         const SizedBox(height: 2.0),
         Text(
           level,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12.0,
-            color: Colors.grey[600],
-            fontWeight: FontWeight.w500,
+            color: Color(0xFF64748B),
+            fontWeight: FontWeight.w600,
           ),
         ),
       ],
@@ -498,6 +534,49 @@ class ProfileScreen extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
+    );
+  }
+
+  Widget _buildContactRow({
+    required IconData icon,
+    required String label,
+    required String value,
+    required Color color,
+  }) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.08),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Icon(icon, color: color, size: 18),
+        ),
+        const SizedBox(width: 12),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF64748B),
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              value,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF1E293B),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
