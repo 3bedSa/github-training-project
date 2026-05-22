@@ -18,6 +18,14 @@ class ProfileScreen extends StatelessWidget {
             letterSpacing: -0.5,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            onPressed: () {
+              // share function
+            },
+          ),
+        ],
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
